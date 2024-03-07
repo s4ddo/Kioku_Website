@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poor+Story&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@100..900&family=Poor+Story&display=swap');
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        @keyframes fadeup {
+            from {
+                opacity: 0.2;
+                transform: scale(95%) translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .fadein {
+            animation-name: fadein;
+            animation-duration: 1s;
+        }
+        
+        body {  
+            background: black;
+            background-size: cover;
+            overflow: clip;
+        }
+
+        #left_container {
+            width: 50%;
+        }
+
+        .buttons {
+            color: white;
+            font-family: 'DM Serif Display',serif;
+            font-size: 3vw;
+            margin-left: 5vw;
+            transition: all 0.25s;
+        }
+        
+        .buttons:hover {
+            color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: block; position:absolute; right:0; top:0; width: 50%; height:100%; animation-name: fadeup; animation-duration: 1s;">
+        <video autoplay loop muted plays-inline style="bottom: 0; right:10%; position: absolute; object-fit:cover; height:100%; z-index: -1;">
+            <source src="videos/idle.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+
+    <div id="left_container" class="fadein">
+
+        <div style="color: white; font-family: 'DM Serif Display',serif; font-size: 10vw; margin: 5vw; line-height: 0.9">
+            kioku.
+            <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 2vw;margin: 0; padding: 0;">
+                coming soon
+            </div>
+        </div>
+
+        <a class="buttons" href="about.html">
+            about
+        </a><br />
+        <a class="buttons" href="tracks.html">
+            tracks
+        </a><br />
+        <a class="buttons" href="team.html">
+            team
+        </a>
+    </div>
+</body>
+</html>
