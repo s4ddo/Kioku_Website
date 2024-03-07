@@ -57,34 +57,63 @@
         .buttons:hover {
             color: aquamarine;
         }
+        .fade-out-div {
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+            .fade-out-div.fade-out {
+                opacity: 0;
+            }
+
     </style>
 </head>
 <body>
-    <div style="display: block; position:absolute; right:0; top:0; width: 50%; height:100%; animation-name: fadeup; animation-duration: 1s;">
-        <video autoplay loop muted plays-inline style="bottom: 0; right:20%; position: absolute; object-fit:cover; height:100%; z-index: -1;">
-            <source src="videos/idle.mp4" type="video/mp4" />
-        </video>
-    </div>
-
-
-    <div id="left_container" class="fadein">
-
-        <div style="color: white; font-family: 'DM Serif Display',serif; font-size: 10vw; margin: 5vw; line-height: 0.9">
-            kioku.
-            <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 2vw;margin: 0; padding: 0;">
-                coming soon
-            </div>
+    <div id="fadeMe" class="fade-out-div">
+        <div style="display: block; position:absolute; right:0; top:0; width: 50%; height:100%; animation-name: fadeup; animation-duration: 1s;">
+            <video autoplay loop muted plays-inline style="bottom: 0; right:20%; position: absolute; object-fit:cover; height:100%; z-index: -1;">
+                <source src="videos/idle.mp4" type="video/mp4" />
+            </video>
         </div>
 
-        <a class="buttons" href="about.html">
-            about
-        </a><br />
-        <a class="buttons" href="tracks.html">
-            tracks
-        </a><br />
-        <a class="buttons" href="team.html">
-            team
-        </a>
+
+        <div id="left_container" class="fadein">
+
+            <div style="color: white; font-family: 'DM Serif Display',serif; font-size: 10vw; margin: 5vw; line-height: 0.9">
+                kioku.
+                <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 2vw;margin: 0; padding: 0;">
+                    coming soon
+                </div>
+            </div>
+
+            <a class="buttons" href="about.html">
+                about
+            </a><br />
+            <a class="buttons" href="tracks.html">
+                tracks
+            </a><br />
+            <a class="buttons" href="team.html">
+                team
+            </a>
+        </div>
     </div>
+    <script>
+
+        document.querySelectorAll('.buttons').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default navigation behavior
+
+                const fadeMe = document.getElementById('fadeMe');
+                fadeMe.classList.add('fade-out');
+
+                // Wait for the animation to complete before navigating
+                setTimeout(function () {
+                    window.location.href = event.target.href;
+                }, 500); // 0.5s is the duration of the fade-out animation
+            });
+        });
+
+
+    </script>
 </body>
 </html>
