@@ -9,6 +9,7 @@
 
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poor+Story&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@100..900&family=Poor+Story&display=swap');
+        @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
         @keyframes fadein {
             from {
@@ -72,6 +73,70 @@
             .fade-out-div.fade-out {
                 opacity: 0;
             }
+
+
+
+        .footer-social-links {
+            font-size: 14px;
+            text-align: left;
+            margin-top: 5%;
+        }
+
+            .footer-social-links a {
+                width: 5vw;
+                height: 5vw;
+                line-height: 5vw !important;
+                position: relative;
+                margin: 0 5px;
+                text-align: center;
+                display: inline-block;
+                color: #111;
+                -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+            }
+
+                .footer-social-links a i,
+                .footer-social-links a span {
+                    position: relative;
+                    top: 2px;
+                    left: 1px;
+                }
+
+                .footer-social-links a:before {
+                    content: "";
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border: 1px solid #111;
+                    -webkit-border-radius: 2px;
+                    -moz-border-radius: 2px;
+                    border-radius: 2px;
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    -webkit-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                    -moz-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                    -o-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                    -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                    transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
+                }
+
+                .footer-social-links a:hover {
+                    color: #fff;
+                }
+
+                    .footer-social-links a:hover:before {
+                        background: #111;
+                    }
+
     </style>
 </head>
 <body>
@@ -86,16 +151,17 @@
         <div id="left_container" class="fadein">
 
             <div style="color: white; font-family: 'DM Serif Display',serif; font-size: 10vw; margin-left: 0; margin-top: 5vw; line-height: 1">
-                about.
+                more.
                 <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 2vw;margin: 0; padding: 0;">
                     An Indie Game by S4T ODDORA
                 </div>
             </div>
 
-            <p style="color: white; font-family: 'Lexend', sans-serif; font-weight: 200;">
-
-                Kioku is an indie game being produced through the collaboration of s4ddo and Taro, greatly inspired by a combination of games such as Sekiro, Hades, and Omori. While also aiming to preserve the minimalism and simplicity of arcade rhythm games like Geometry Dash and Osu.
-            </p>
+            <div class="footer-social-links" style="filter: invert(100%);">
+                <a href="#" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+                <a href="#" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+            </div>
         </div>
     </div>
     <script>
