@@ -98,18 +98,15 @@
         </div>
     </div>
     <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
+        window.addEventListener('pageshow', function (event) {
             const fadeMe = document.getElementById('fadeMe');
 
-            // Check if the page is being loaded from a cached state
-            const navigationEntries = window.performance.getEntriesByType('navigation');
-            if (navigationEntries.length && navigationEntries[0].type === 'back_forward') {
-                // If the page is loaded from a cached state (using the back button), remove the fade-out class
+            // Check if the page is being loaded or restored from the cache
+            if (event.persisted) {
+                // If the page is loaded or restored from the cache, remove the fade-out class
                 fadeMe.classList.remove('fade-out');
             }
         });
-
         document.querySelectorAll('.buttons').forEach(function (link) {
             link.addEventListener('click', function (event) {
                 event.preventDefault(); // Prevent the default navigation behavior
