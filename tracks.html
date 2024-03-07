@@ -6,27 +6,132 @@
     <title></title>
 
     <style>
+
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poor+Story&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@100..900&family=Poor+Story&display=swap');
-        body {  
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @keyframes fadein {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeup {
+            from {
+                opacity: 0.2;
+                transform: scale(100%) translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadein {
+            animation-name: fadein;
+            animation-duration: 1s;
+        }
+
+        body {
             background: black;
             background-size: cover;
             overflow: clip;
         }
 
         #left_container {
-            width: 50%;
+            display: block;
+            width: 40vw;
+            padding-left: 5vw;
+            padding-right: 5vw;
         }
 
         .buttons {
             color: white;
             font-family: 'DM Serif Display',serif;
             font-size: 3vw;
-            margin-left: 5vw;
+            margin-left: 0;
+            transition: all 0.25s;
         }
+
+            .buttons:hover {
+                color: aquamarine;
+            }
+
+        .fade-out-div {
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+            .fade-out-div.fade-out {
+                opacity: 0;
+            }
     </style>
 </head>
 <body>
-    urmom
+    <div id="fadeMe" class="fade-out-div">
+        <div style="display: block; position:absolute; right:0; top:0; width: 50%; height:100%; animation-name: fadeup; animation-duration: 1s;">
+            <video autoplay loop muted plays-inline style="bottom: 0; right:20%; position: absolute; object-fit:cover; height:100%; z-index: -1;">
+                <source src="videos/track.mp4" type="video/mp4" />
+            </video>
+        </div>
+
+
+        <div id="left_container" class="fadein">
+
+            <div style="color: white; font-family: 'DM Serif Display',serif; font-size: 10vw; margin-left: 0; margin-top: 5vw; line-height: 1">
+                tracks.
+                <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 2vw;margin: 0; padding: 0;">
+                    Tracks composed by Taro
+                </div>
+            </div>
+            <br />
+            <div>
+                <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 1.5vw; font-weight: 900; line-height: 3 ">
+                    1 | Big Boss
+                </div>
+                <audio controls>
+                    <source src="music/big_boss.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+        </div>
+    </div>
+    <script>
+
+        window.addEventListener('pageshow', function (event) {
+            const fadeMe = document.getElementById('fadeMe');
+
+            // Check if the page is being loaded or restored from the cache
+            if (event.persisted) {
+                // If the page is loaded or restored from the cache, remove the fade-out class
+                fadeMe.classList.remove('fade-out');
+            }
+        });
+
+
+        document.querySelectorAll('.buttons').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default navigation behavior
+
+                const fadeMe = document.getElementById('fadeMe');
+                fadeMe.classList.add('fade-out');
+
+                // Wait for the animation to complete before navigating
+                setTimeout(function () {
+                    window.location.href = event.target.href;
+                }, 500); // 0.5s is the duration of the fade-out animation
+            });
+        });
+
+
+    </script>
 </body>
 </html>
