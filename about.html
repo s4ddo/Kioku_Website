@@ -2,83 +2,20 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta charset="utf-8" />
     <title>About</title>
     <link rel="icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="main_style.css" />
 
     <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poor+Story&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@100..900&family=Poor+Story&display=swap');
-
-        @keyframes fadein {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        @keyframes fadeup {
-            from {
-                opacity: 0.2;
-                transform: scale(100%) translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        .fadein {
-            animation-name: fadein;
-            animation-duration: 1s;
-        }
-
-        body {
-            background: black;
-            background-size: cover;
-            overflow: clip;
-        }
-
-        #left_container {
-            display: block;
-            width: 40vw;
-            padding-left: 5vw;
-            padding-right: 5vw;
-        }
-
-        .buttons {
-            color: white;
-            font-family: 'DM Serif Display',serif;
-            font-size: 3vw;
-            margin-left: 0;
-            transition: all 0.25s;
-        }
-
-            .buttons:hover {
-                color: aquamarine;
-            }
-
-        .fade-out-div {
-            transition: opacity 0.5s ease;
-            opacity: 1;
-        }
-
-            .fade-out-div.fade-out {
-                opacity: 0;
-            }
     </style>
 </head>
 <body>
     <div id="fadeMe" class="fade-out-div">
-        <div style="display: block; position:absolute; right:0; top:0; width: 50%; height:100%; animation-name: fadeup; animation-duration: 1s;">
-            <video autoplay loop muted plays-inline style="bottom: 0; right:10%; position: absolute; object-fit:cover; height:100%; z-index: -1;">
+        <div class="rightcontainer" style="animation-name: fadeup; animation-duration: 1s;">
+            <video autoplay loop muted plays-inline class="video" style="bottom: 0; position: absolute; object-fit:cover; height:100%; z-index: -1;">
                 <source src="videos/enemy.mp4" type="video/mp4" />
             </video>
         </div>
@@ -86,14 +23,14 @@
 
         <div id="left_container" class="fadein">
 
-            <div style="color: white; font-family: 'DM Serif Display',serif; font-size: 10vw; margin-left: 0; margin-top: 5vw; line-height: 1">
+            <div class="title" style="color: white; font-family: 'DM Serif Display',serif; margin-left: 0; margin-top: 5vw; line-height: 1">
                 about.
-                <div style="color: white; font-family: 'Lexend', sans-serif; font-size: 2vw;margin: 0; padding: 0;">
+                <div class="sub_title"style="color: white; font-family: 'Lexend', sans-serif;margin: 0; padding: 0;">
                     An Indie Game by S4T ODDORA
                 </div>
             </div>
 
-            <p style="color: white; font-family: 'Lexend', sans-serif; font-weight: 200;">
+            <p class="texts" style="color: white; font-family: 'Lexend', sans-serif; font-weight: 200;">
 
                 Kioku is an indie game being produced through the collaboration of s4ddo and Taro, greatly inspired by a combination of games such as Sekiro, Hades, and Omori. While also aiming to preserve the minimalism and simplicity of arcade rhythm games like Geometry Dash and Osu.
             </p>
