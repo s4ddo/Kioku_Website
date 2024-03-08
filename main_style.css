@@ -1,9 +1,15 @@
 ﻿
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poor+Story&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@100..900&family=Poor+Story&display=swap');
-body{
-    margin:0;
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+
 }
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -99,6 +105,7 @@ body {
     height: 100%;
     animation-name: fadeside;
     animation-duration: 1s;
+    z-index: -1;
 }
 
 .video{
@@ -136,11 +143,7 @@ body {
         font-size: 4vw;
     }
     .buttons {
-        color: white;
-        font-family: 'DM Serif Display',serif;
         font-size: 8vw;
-        margin-left: 0;
-        transition: all 0.25s;
     }
 
     .video {
